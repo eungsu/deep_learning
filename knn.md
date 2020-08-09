@@ -1,6 +1,6 @@
 # 최근접 이웃 알고리즘
 * kNN(k Nearest Neighbors) : 최근접 이웃 알고리즘
-* 새로운 데이터의 분류를 알기 위해 사용
+* 새로운 데이터의 분류를 알기 위해 사용  
 
 ## 몸무게와 키로 성별을 분류하는 KNN 지도학습 알고리즘 예제
 ```python
@@ -50,4 +50,26 @@ def knn(newData, dataItems, k):
         print("female")
     else:
         print("male")
+```
+## KNN 지도학습 알고리즘을 활용해서 몸무게와 키로 성별 판정해보기
+```python
+weight = input("몸무게: ")
+height = input("키: ")
+k = input("k값")
+newData = [int(weight), int(height)]
+knn(newData, femaleData + maleData, int(k))
+```
+
+## KKN 지도학습 알고리즘을 활용해서 임의의 값으로 몸무게와 키로 성별을 판정하고, 그 결과를 그래프로 표시하기
+```python
+import matplotlib.pyplot as plt
+
+femaleArray = np.array(femaleData)
+maleArray = np.array(maleData)
+
+for i, j in femaleArray[:, :2]:
+    plt.plot(i, j, 'or')
+for i, j in maleArray[:, :2]:
+    plt.plot(i, j, 'ob')
+plt.show()
 ```
