@@ -116,4 +116,4 @@ yhat = model.predict_classes(xhat)
 
 for i in range(5):
     print('True : ' + str(np.argmax(y_test[xhat_idx[i]])) + ', Predict : ' + str(yhat[i]))
-...
+```
